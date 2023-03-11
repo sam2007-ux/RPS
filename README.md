@@ -18,7 +18,7 @@ How to play
  - The game will display the winner or a tie
 
 
-Current Improvements
+Currently needed Improvements
  - Add input validation to ensure players only enter valid moves (rock, paper or scissors)
  - Allow the player to choose the number of rounds to play
  - Implement a scoring system for multiplayer games
