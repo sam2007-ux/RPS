@@ -1,8 +1,15 @@
 import java.lang.Thread.State;
 import java.util.Scanner;
+import java.util.function.Function;
+
+import javafx.print.Paper;
+
+import java.util.Random;
 
 //Implemtent Ignore case funcinality
 public class RPS {
+  private static final Scanner scan = new Scanner(System.in);
+
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
 
@@ -22,6 +29,7 @@ public class RPS {
     switch (c) {
       case PLAY_OPTION:
         clear();
+        Play();
         break;
       case HELP_OPTION:
         clear();
@@ -67,6 +75,45 @@ public class RPS {
       System.out.println("To play, type your choice (rock, paper, or scissors) and press enter.");
     } catch (Exception e) {
       System.out.println(e);
+    }
+  }
+
+  public static void Play() {
+    try {
+      while (true) {
+        System.out.println("Do you wish to play against a Computer or a friend?");
+        System.out.print("Enter `Computer or Friend`: ");
+        String OponentChoice = scan.nextLine();
+
+        if (OponentChoice.equalsIgnoreCase("Computer")) {
+
+          // TODO : Implement PlayagainstComputer Function
+          break;
+        } else if (OponentChoice.equalsIgnoreCase("Friend")) {
+
+          // TODO : Implement PlayagainstFriend Function
+        } else {
+          System.out.println("Invalid choice, please enter 'computer' or 'friend'.");
+        }
+      }
+    } catch (Exception e) {
+      System.exit(0);
+    }
+  }
+
+  public static void PlayagainstComputer(){
+    try{
+      
+      System.out.println("your are playing against a computer");
+
+      while(true){
+        
+
+        System.out.println("Enter your choice (Rock,  Paper, or Scissors)");
+        String userChoice = scan.nextLine();
+
+      if(userChoice.equalsIgnoreCase("Rock") || userChoice.equalsIgnoreCase("Paper") || userChoice.equalsIgnoreCase("Scissors")){
+      }
     }
   }
 
