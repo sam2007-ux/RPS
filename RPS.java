@@ -13,40 +13,39 @@ public class RPS {
     System.out.println("  - " + PLAY_OPTION + " -");
     System.out.println("  - " + HELP_OPTION + " -");
     System.out.println("  - " + LEAVE_OPTION + " -");
-
     System.out.println();
     System.out.print("Type: ");
-    String c = scan.nextLine();
+    String IntroOption = scan.nextLine();
 
+    switch (IntroOption) {
+      case PLAY_OPTION:
+        clear();
+        break;
+      case HELP_OPTION:
+        // TODO: Implement help functionality
+        break;
+      case LEAVE_OPTION:
+        System.exit(0);
+        break;
+      default:
+        System.out.println("Invalid option. Please try again.");
+    }
   }
 
   public static void clear() {
     try {
-      System.out.print("\033\143");
-      System.out.println(".");
-      Thread.sleep(100);
-      Thread.sleep(100);
-      Thread.sleep(100);
-      System.out.print("\033\143");
-      System.out.println("..");
-      Thread.sleep(100);
-      Thread.sleep(100);
-      Thread.sleep(100);
-      System.out.print("\033\143");
-      System.out.println("...");
-      Thread.sleep(100);
-      Thread.sleep(100);
-      Thread.sleep(100);
-      System.out.print("\033\143");
-      System.out.println("....");
-      Thread.sleep(100);
-      Thread.sleep(100);
-      Thread.sleep(100);
-      Thread.sleep(100);
-      System.out.print("\033\143");
+      if (System.getProperty("os.name").contains("Windows")) {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+      } else {
+        Runtime.getRuntime().exec("clear");
+      }
     } catch (Exception e) {
       System.out.println(e);
     }
+  }
+
+  public static void help() {
+
   }
 
 }
